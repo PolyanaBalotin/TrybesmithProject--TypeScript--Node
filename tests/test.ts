@@ -30,7 +30,7 @@ afterAll(async () => {
 // Clean database before tests
 beforeAll(async () => { await recreateDatabase(); });
 
-describe.only("1 - Crie um endpoint para o cadastro de pessoas usuárias", () => {
+describe("1 - Crie um endpoint para o cadastro de pessoas usuárias", () => {
   // Close connections and server after tests
   afterAll(async () => {
     await dropDatabase();
@@ -185,7 +185,7 @@ describe.only("1 - Crie um endpoint para o cadastro de pessoas usuárias", () =>
   });
 });
 
-describe("2 - Crie um endpoint para o login de pessoas usuárias", () => {
+describe.only("2 - Crie um endpoint para o login de pessoas usuárias", () => {
   // Clean database and create one user before tests
   beforeAll(async () => {
     await recreateDatabase();

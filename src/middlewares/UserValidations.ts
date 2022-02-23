@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { IUser } from '../models/IUser';
+import { IUser, LoginInterface } from '../models/IUser';
 
 export const validateUsername = (req: Request, res: Response, next: NextFunction) => {
   const { username } = req.body as IUser;
@@ -53,9 +53,11 @@ export const validatePassword = (req: Request, res: Response, next: NextFunction
   next();
 };
 
-export default {
-  validateUsername,
-  validateClasse,
-  validateLevel,
-  validatePassword,
+export const validateLogin = (req: Request, res: Response, next: NextFunction) => {
+  const { username, password } = req.body as LoginInterface;
+
+  if (!username) return res.status(400).json({ error: 'Username is required' });
+  if (!password) return res.status(400).json({ error: 'Password is required' });
+
+  next();
 };
