@@ -1,5 +1,5 @@
 import UserModel from '../models/UserModel';
-import { IUser, LoginInterface } from '../models/IUser';
+import { IUser, LoginInterface } from '../models/Interfaces';
 
 const createUser = async ({ username, classe, level, password }: IUser) => {
   const user = await UserModel.createUser({ username, classe, level, password });

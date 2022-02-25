@@ -13,3 +13,8 @@ export interface LoginInterface {
   username: string,
   password: string,
 }
+
+export interface IProducts {
+  name: string,
+  amount: string,
+}

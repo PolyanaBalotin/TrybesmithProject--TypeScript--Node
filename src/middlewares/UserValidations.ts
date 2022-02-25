@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { IUser, LoginInterface } from '../models/IUser';
+import { IUser, LoginInterface } from '../models/Interfaces';
 
 export const validateUsername = (req: Request, res: Response, next: NextFunction) => {
   const { username } = req.body as IUser;
