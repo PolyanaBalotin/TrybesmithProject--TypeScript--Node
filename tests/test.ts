@@ -245,7 +245,7 @@ describe("2 - Crie um endpoint para o login de pessoas usuárias", () => {
   });
 });
 
-describe.only("3 - Crie um endpoint para o cadastro de produtos", () => {
+describe("3 - Crie um endpoint para o cadastro de produtos", () => {
   let token: string;
   // Clean database and create one user before tests
   beforeEach((done) => {
@@ -362,7 +362,7 @@ describe.only("3 - Crie um endpoint para o cadastro de produtos", () => {
   });
 });
 
-describe("4 - Crie um endpoint para a listagem de produtos", () => {
+describe.only("4 - Crie um endpoint para a listagem de produtos", () => {
   let token: string;
 
   beforeEach(async () => {

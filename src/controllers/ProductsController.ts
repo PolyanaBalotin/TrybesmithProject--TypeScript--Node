@@ -8,4 +8,9 @@ export const createProduct = async (req: Request, res: Response) => {
   return res.status(201).json({ item: { id, ...product } });
 };
 
+export const getAllProducts = async (req: Request, res: Response) => {
+  const products = await ProductServicer.getAllProducts();
+  return res.status(200).json(products);
+};
+
 export default createProduct;
