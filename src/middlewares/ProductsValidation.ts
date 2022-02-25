@@ -26,8 +26,3 @@ export const validateAmount = (req: Request, res: Response, next: NextFunction) 
   }
   next();
 };
-
-export default {
-  validateName,
-  validateAmount,
-};
