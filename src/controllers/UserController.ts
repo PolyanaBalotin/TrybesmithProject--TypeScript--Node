@@ -5,7 +5,7 @@ import UserServicer from '../services/UserServicer';
 export const createUser = async (req: Request, res: Response) => {
   const { username, classe, level, password } = req.body;
   await UserServicer.createUser({ username, classe, level, password });
-  const token = jwt.sign({ username }, process.env.JWT_SECRET || 'segredo');
+  const token = jwt.sign({ username }, process.env.JWT_SECRET as string);
   return res.status(201).json({ token });
 };
 
@@ -15,6 +15,6 @@ export const userLogin = async (req: Request, res: Response) => {
   if (!Object.keys(user).length) {
     return res.status(401).json({ error: 'Username or password invalid' });
   }
-  const token = jwt.sign({ username }, process.env.JWT_SECRET || 'segredo');
+  const token = jwt.sign({ username }, process.env.JWT_SECRET as string);
   return res.status(200).json({ token });
 };

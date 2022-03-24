@@ -6,7 +6,7 @@ export const validateToken = (req: Request, res: Response, next: NextFunction) =
   
   if (!token) return res.status(401).json({ error: 'Token not found' });
   try {
-    jwt.verify(token, process.env.JWT_SECRET || 'segredo');
+    jwt.verify(token, process.env.JWT_SECRET as string);
     return next();
   } catch (error) {
     return res.status(401).json({ error: 'Invalid token' });
